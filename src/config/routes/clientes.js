@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../database'); // Importa la conexión a la base de datos
+const axios = require('axios');
 
 // GET /clientes -> Lista todos los clientes
 router.get('/', (req, res) => {
@@ -12,6 +13,10 @@ router.get('/', (req, res) => {
     res.json(results);
   });
 });
+
+//endpoint pidiendo ID
+// Ruta para buscar clientes por clienteid
+
 
 // POST /clientes -> Inserta un nuevo cliente
 router.post('/', (req, res) => {

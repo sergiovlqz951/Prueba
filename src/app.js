@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const axios = require('axios')
 
 
 // Crear una aplicación Express
@@ -18,11 +19,20 @@ const clientesRouter = require('./config/routes/clientes');
 const productosRouter = require('./config/routes/productos');
 const comprasRouter = require('./config/routes/compras');
 const detallesCompraRouter = require('./config/routes/detalles-compra');
+const buscarRouter = require('./config/routes/buscar');
+const geocodeRouter = require('./config/routes/geocode')
+
 
 app.use('/clientes', clientesRouter);
 app.use('/productos', productosRouter);
 app.use('/compras', comprasRouter);
-app.use('/detalles-compra.js', detallesCompraRouter)
+app.use('/detalles-compra.js', detallesCompraRouter);
+app.use('/buscar', buscarRouter);
+app.use('/geocode', geocodeRouter);
+
+
+//endpoint pidiendo ID
+
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
