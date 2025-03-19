@@ -1,9 +1,7 @@
-// routes/clientes.js
 const express = require('express');
 const router = express.Router();
-const db = require('../database'); // Importa la conexión a la base de datos
+const db = require('../database');
 
-// GET /compras -> Lista todas las compras
 router.get('/', (req, res) => {
     db.query('SELECT * FROM daka_shops.compras;', (err, results) => {
       if (err) {
